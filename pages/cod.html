@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products details</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+</head>
+<body>
+    <style>
+:root {
+    --main-color:#0071f8;
+    --a:#116D6E;
+    --c:#3700B3;
+    --d:#03DAC5;
+    --f:#009688;
+    --g:#3f51b5;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:sans-serif ;
+    text-transform: capitalize;
+}
+*::selection {
+    background: tomato;
+}
+.container {
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+        nav {
+    background: var(--main-color);
+    border-radius: 0 0 30px 30px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 7px 0 black;
+    z-index: 33;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
+nav .container .logo {
+    width: 120px;
+    z-index: 33;
+    cursor: pointer;
+}
+nav .container ul {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 22;
+}
+nav .container ul li a {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: .3s;
+}
+nav .container ul li a:hover {
+    background: #57d8da4b;
+}
+nav .container ul button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background:tomato;
+    transition: .3s;
+    margin-left: 30px;
+}
+nav .container ul button:hover  {
+    background: red;
+}
+.menu-icon {
+    width: 30px;
+    height: 10px;
+    display: none;
+}
+.menu-icon div {
+    width: 100%;
+    height: 3px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    transition: .5s;
+}
+.menu-icon div:first-child {
+    margin-top: -4px;
+}
+.menu-icon div:last-child {
+    margin: 0;
+}
+.menu-icon:hover div {
+    background: red;
+    margin: 0;
+}
+.menu-icon:hover div:first-child {
+    transform: rotate(45deg) translate(4px);
+}
+.menu-icon:hover div:last-child {
+    transform: rotate(-45deg) translate(4px);
+}
+.menu-icon:hover div:nth-child(2) {
+    transform: scale(0);
+}
+.menu-icon:hover + ul {
+    transform: scale(1);
+}
+nav .container ul:hover {
+    transform: scale(1);
+}
+a[href="#products-details"] {
+    background: #57d8da4b
+}
+@media (max-width: 787px) {
+    .menu-icon {
+        display: block;
+    }
+    nav .container ul {
+        transform: scale(0);
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        background: var(--main-color);
+        padding: 50px 80px;
+        transition: .3s;
+        transform-origin: top right;
+        border-bottom: 4px solid tomato;
+    }
+    nav .container ul li {
+        margin: 20px 0;
+    }
+    nav .container ul button {
+        margin: 10px 0;
+    }
+}
+@media (max-width: 366px) {
+    nav .container ul {
+        padding: 50px 30px;
+    }
+}
+
+.intro-text {
+    background: url(../images/banner-bg.jpg) center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vb;
+    border-radius: 0 0 150px 150px;
+    position: relative;
+    top: -25px;
+    text-align: center;
+    color: white;
+    margin-bottom: 70px;
+}
+.intro-text a {
+    color: white;
+}
+.intro-text h1 {
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.intro-text h1 span,
+.landing .container .text h2 span {
+    font-size: 18px;
+    vertical-align: top;
+}
+.landing {
+    padding-bottom: 50px;
+}
+.landing .container .head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.landing .container .head img {
+    width: 36%;
+}
+.landing .container .head .text {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.landing .container .head .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+}
+.landing .container .head .footer div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.landing .container .head .text h2 {
+    font-weight: 800;
+    font-size: 25px;
+}
+.landing .container .head .text .price del {
+    font-weight: bold;
+    color: #777;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.landing .container .head .text .price span {
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 30px;
+}
+.landing .container .head .text p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+}
+.landing .container .head .cart input {
+    width: 80px;
+    height: 50px;
+    background-color: #f7f7f7;
+    border: 1px solid #e7e7e7;
+    border-radius: 25px;
+    padding-left: 35px;
+    margin-right: 30px;
+}
+.landing .container .head .cart a {
+    background: tomato;
+    padding: 15px;
+    border-radius: 30px;
+    color: white;
+    transition: .3s;
+}
+.landing .container .head .cart a i {
+    margin-right: 10px;
+}
+.landing .container .head .cart a:hover {
+    background: var(--main-color);
+}
+.landing .container .head .footer {
+    margin-top: 30px;
+}
+.landing .container .head .footer p {
+    color: #777;
+}
+.landing .container .head .footer a {
+    color: var(--main-color);
+}
+@media (max-width: 977px) {
+    .landing .container .head {
+        justify-content: center;
+        gap: 40px;
+    }
+    .landing .container .head img {
+        width: 94%;
+    }
+    .landing .container .head .text {
+        width: 94%;
+        gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .landing .container .head .footer {
+        width: 96%;
+    }
+}
+</style>
+    <nav>
+        <div class="container">
+            <img src="../images/logo.png" alt="logo" class="logo">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="links">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../pages/shop.html" target="_blank">our shop</a></li>
+                <li><a href="../pages/details.html" target="_blank">products details</a></li>
+                <li><a href="../contact">contact us</a></li>
+                <li><a href="../sign">sign in</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="intro-text">
+    <div class="container">
+        <h1>MODERN WARFARE<span>®</span> II</h1>
+        <a href="../index.html">home</a> > <a href="./shop.html">shop</a> > Call of Duty
+    </div>
+</div>
+<div class="landing">
+    <div class="container">
+       <div class="head">
+        <img src="../images/single-game.jpg" loading="lazy">
+        <div class="text">
+            <h2>Call of Duty<span>®</span>: Modern Warfare<span>®</span> II</h2>
+            <div class="price">
+                <del>$28</del>
+                <span>$22</span>
+            </div>
+            <p>LUGX Gaming Template is based on the latest Bootstrap 5 CSS framework. This template is provided by TemplateMo and it is suitable for your gaming shop ecommerce websites. Feel free to use this for any purpose. Thank you.</p>
+            <div class="cart">
+                <input type="text" value="1">
+                <a href="#">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    ADD TO CART 
+                </a>
+            </div>
+            <div class="footer">
+                <div>
+                    <p>game id:</p> <a href="#">cod mmii</a>
+                </div>
+                <div>
+                    <p>gener:</p> <a href="#">action, team, single</a>
+                </div>
+                <div>
+                    <p>multi-tags:</p> <a href="#">war, battle, royal</a>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

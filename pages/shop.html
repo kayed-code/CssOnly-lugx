@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>our shop</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+</head>
+<body>
+    <style>
+:root {
+    --main-color:#0071f8;
+    --a:#116D6E;
+    --c:#3700B3;
+    --d:#03DAC5;
+    --f:#009688;
+    --g:#3f51b5;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:sans-serif ;
+    text-transform: capitalize;
+}
+*::selection {
+    background: tomato;
+}
+.container {
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+        nav {
+    background: var(--main-color);
+    border-radius: 0 0 30px 30px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 7px 0 black;
+    z-index: 33;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
+nav .container .logo {
+    width: 120px;
+    z-index: 33;
+    cursor: pointer;
+}
+nav .container ul {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 22;
+}
+nav .container ul li a {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: .3s;
+}
+nav .container ul li a:hover {
+    background: #57d8da4b;
+}
+nav .container ul button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background:tomato;
+    transition: .3s;
+    margin-left: 30px;
+}
+nav .container ul button:hover  {
+    background: red;
+}
+.menu-icon {
+    width: 30px;
+    height: 10px;
+    display: none;
+}
+.menu-icon div {
+    width: 100%;
+    height: 3px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    transition: .5s;
+}
+.menu-icon div:first-child {
+    margin-top: -4px;
+}
+.menu-icon div:last-child {
+    margin: 0;
+}
+.menu-icon:hover div {
+    background: red;
+    margin: 0;
+}
+.menu-icon:hover div:first-child {
+    transform: rotate(45deg) translate(4px);
+}
+.menu-icon:hover div:last-child {
+    transform: rotate(-45deg) translate(4px);
+}
+.menu-icon:hover div:nth-child(2) {
+    transform: scale(0);
+}
+.menu-icon:hover + ul {
+    transform: scale(1);
+}
+nav .container ul:hover {
+    transform: scale(1);
+}
+a[href="#our-shop"] {
+    background: #57d8da4b
+}
+@media (max-width: 787px) {
+    .menu-icon {
+        display: block;
+    }
+    nav .container ul {
+        transform: scale(0);
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        background: var(--main-color);
+        padding: 50px 80px;
+        transition: .3s;
+        transform-origin: top right;
+        border-bottom: 4px solid tomato;
+    }
+    nav .container ul li {
+        margin: 20px 0;
+    }
+    nav .container ul button {
+        margin: 10px 0;
+    }
+}
+@media (max-width: 366px) {
+    nav .container ul {
+        padding: 50px 30px;
+    }
+}
+.intro-text {
+    background: url(../images/banner-bg.jpg) center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vb;
+    border-radius: 0 0 150px 150px;
+    position: relative;
+    top: -25px;
+    text-align: center;
+    color: white;
+}
+.intro-text a {
+    color: white;
+}
+.intro-text h1 {
+    font-weight: 900;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.shop {
+    margin-top: 70px;
+}
+.shop .container .buttons,
+.shop .container .footer-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+.shop .container .buttons button {
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.shop .container .buttons button:first-child {
+    background: tomato;
+    color: white;
+}
+.shop .container .buttons button:not(.shop .container .buttons button:first-child):hover {
+    color: tomato;
+}
+.shop .container .category {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(250px , 1fr));
+    gap: 25px;
+    margin-bottom: 90px;
+}
+.shop .container .category .item {
+    background: #eee;
+    border-radius: 20px;
+    position: relative;
+    
+}
+.shop .container .item  img {
+    width: 100%;
+    border-radius: 20px;
+}
+.shop .container .category .item .info {
+    padding: 20px;
+}
+.shop .container .item span {
+    position: absolute;
+    background: var(--main-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    right: 10px;
+    top: 10px;
+    text-align: right;
+}
+.shop .container .item span del {
+    font-size: 12px;
+}
+.shop .container .item span p {
+    font-weight: bold;
+}
+.shop .container .category .item .info {
+    position: relative;
+}
+.shop .container .category .item .info p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.shop .container .category .item .info b {
+    transition: .3s;
+    font-weight: bold;
+}
+.shop .container .category .item:hover .info b {
+    color: var(--main-color);
+}
+.shop .container .category .item .info a {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    background: tomato;
+    padding: 9px 12px;
+    font-size: 17px;
+    border-radius: 50%;
+    transition: .3s;
+}
+.shop .container .category .item:hover .info a {
+    background: var(--main-color);
+}
+.shop .container .footer-buttons a {
+    background: #eee;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: .3s;
+}
+.shop .container .footer-buttons a:nth-child(3) {
+    color: white;
+    background: var(--main-color);
+}
+.shop .container .footer-buttons a:hover {
+    background: var(--main-color);
+    color: white;
+}
+</style>
+    <nav>
+        <div class="container">
+            <img src="../images/logo.png" alt="logo" class="logo">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="links">
+                <li><a href="../index.html">home</a></li>
+            <li><a href="../pages/shop.html" target="_blank">our shop</a></li>
+            <li><a href="../pages/details.html" target="_blank">products details</a></li>
+            <li><a href="../contact">contact us</a></li>
+            <li><a href="../sign">sign in</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="intro-text">
+    <div class="container">
+        <h1>our shop</h1>
+        <a href="../index.html">home</a> > our shop
+    </div>
+</div>
+<div class="shop">
+    <div class="container">
+        <div class="buttons">
+            <button>show all</button>
+            <button>advinture</button>
+            <button>stratigy</button>
+            <button>racing</button>
+        </div>
+        <div class="category">
+            <div class="item">
+                <span>
+                    <del>$32</del>
+                    <p>$22</p>
+                </span>
+                <a href="../pages/brawlhalla.html" rel="nofollow" ><img src="../images/categories-01.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>action</p>
+                    <b>assasins cread</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$20</del>
+                    <p>$18</p>
+                </span>
+                <a href="../pages/dota.html" rel="nofollow" ><img src="../images/categories-02.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>action</p>
+                    <b>dota 2</b>
+                    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$44</del>
+                    <p>$22</p>
+                </span>
+                <a href="../pages/tower.html" rel="nofollow" ><img src="../images/categories-03.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>fantasy</p>
+                    <b>tower defence</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$22</del>
+                    <p>$12</p>
+                </span>
+                <a href="../pages/super.html"><img src="../images/categories-04.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>shooter</p>
+                    <b>super people</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$32</del>
+                    <p>$22</p>
+                </span>
+                <a href="../pages/cod.html" rel="nofollow" ><img src="../images/single-game.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>action</p>
+                    <b>call of duty</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$42</del>
+                    <p>$32</p>
+                </span>
+                <a href="../pages/pubg.html" rel="nofollow" ><img src="../images/top-game-02.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>multeplayer</p>
+                    <b>battel ground</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$60</del>
+                    <p>$40</p>
+                </span>
+                <a href="../pages/lost.html" rel="nofollow" ><img src="../images/top-game-05.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>survivel</p>
+                    <b>lost ark</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$62</del>
+                    <p>$52</p>
+                </span>
+                <a href="../pages/destiny.html" rel="nofollow" ><img src="../images/top-game-06.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>action</p>
+                    <b>destiny 2</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="item">
+                <span>
+                    <del>$32</del>
+                    <p>$12</p>
+                </span>
+                <a href="../pages/warframe.html" rel="nofollow" ><img src="../images/categories-05.jpg" loading="lazy"></a>
+                <div class="info">
+                    <p>action</p>
+                    <b>warframe</b>
+                    <a href="#" rel="nofollow" ><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-buttons">
+            <a href="#" rel="nofollow" > < </a>
+            <a href="#" rel="nofollow" > 1 </a>
+            <a href="#" rel="nofollow" > 2 </a>
+            <a href="#" rel="nofollow" > 3 </a>
+            <a href="#" rel="nofollow" > > </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
